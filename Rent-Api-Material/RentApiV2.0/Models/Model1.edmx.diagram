@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="428a5153756041769fdee56658971edb" Name="Diagram1" ZoomLevel="114">
+        <EntityTypeShape EntityType="DBRENTModel.Table" Width="1.5" PointX="6.25" PointY="3.75" />
+        <AssociationConnector Association="DBRENTModel.FK_Kayit_ToKullanici" />
+        <EntityTypeShape EntityType="DBRENTModel.Araba" Width="1.5" PointX="2.125" PointY="1.25" />
+        <EntityTypeShape EntityType="DBRENTModel.Kategori" Width="1.5" PointX="7.875" PointY="2.25" />
+        <EntityTypeShape EntityType="DBRENTModel.Kayit" Width="1.5" PointX="5.25" PointY="3.375" />
+        <EntityTypeShape EntityType="DBRENTModel.Kullanici" Width="1.5" PointX="2.875" PointY="5.625" />
+        <EntityTypeShape EntityType="DBRENTModel.Yakit" Width="1.5" PointX="7.75" PointY="5.5" />
+        <AssociationConnector Association="DBRENTModel.FK_Table_ToAraba" />
+        <AssociationConnector Association="DBRENTModel.FK_Table_ToKategori" />
+        <AssociationConnector Association="DBRENTModel.FK_Kayit_ToYakit" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
