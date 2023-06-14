@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;  
+  }
+  
+  .YaziLarge{
+    font-size: large;
+  }
+
+  .YaziMedium{
+    font-size: medium;
+  }
+
+  .container{
+    width: 1650px;
+    margin-top: 50px;
+    margin-left: 115px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    border: solid rgb(175, 173, 172) 2px ;
+  }

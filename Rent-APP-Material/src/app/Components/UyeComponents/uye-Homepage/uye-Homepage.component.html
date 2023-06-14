@@ -1,0 +1,76 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+
+  <button class="YaziLarge" mat-button [routerLink]="['']" style="margin-left: 20px;">Araba Kiralama
+    Portalı</button>
+  <button class="YaziLarge" mat-button style="margin-left: 1385px;" *ngIf="apiServis.oturumKontrol()">{{uAdi}}</button>
+  <button class="YaziLarge" mat-button style="margin-left: 1500px;" *ngIf="!apiServis.oturumKontrol()"
+    (click)="OturumAcDialog()">Oturum Aç</button>
+
+  <button class="YaziLarge" mat-button style="margin-left: 45px;" *ngIf="apiServis.oturumKontrol()"
+    (click)="OturumKapat()">Oturumu Kapat</button>
+
+
+</mat-toolbar>
+<!-- Arka Plan -->
+<div style="height: 1rem;">
+  <img
+    src="https://e0.pxfuel.com/wallpapers/332/138/desktop-wallpaper-background-1080x2340.jpg"
+    style="width: 1903px;height: 2400px;"  />
+</div>
+
+
+
+<div >
+  <mat-card class="banner" ><a href="https://yolcu360.com/tr/kampanya/maximum-yurtdisi-indirimi/">
+    <img style="border-radius: 20px;width: 999px;height: 208px;"  src="https://static.yolcu360.com/campaign/campaign_code/banner/maximum_slider_TR.jpg"
+      alt="" ></a>
+  </mat-card>
+</div>
+
+
+
+<div class="container">
+  <div class="flex-container">
+    <mat-card class="styleV2-body" *ngFor="let car of arabalar">
+      <mat-card class="styleV2-image-body">
+        <img mat-card-image class="styleV2-image" src="{{car.carResim}}">
+      </mat-card>
+      <mat-card-content class="styleV2-content">
+        <h1 style="color: antiquewhite; margin-top: 35px;"> Marka : {{car.carMarka}} - Model : {{car.carModel}} </h1>
+        <button mat-raised-button color="accent" matToolTip="Araba Detay"
+          style="width: 110px;height: 55px; margin-top: 25px;margin-left: 40px;"
+          [routerLink]="['/uyeArabaPage', car.carId]">İncele</button>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>
+<div class="flex-container">
+
+  <div class="trio-banner">
+    <div >
+      <img mat-card-image class="banner-image" src="https://www.sixt.com.tr/storage/cache/41aa420bee686a4ebae10852e353cc21ed3e2f42.webp">
+      <h1 style="margin-top:8px ;">
+        <a href="https://www.sixt.com.tr/blog/arac-inceleme/peugeot-3008-incelemesi"style="margin-left: 20px;">
+           Peugeto 3008 İncelemesi</a></h1>
+    </div>
+  </div>
+  <div class="trio-banner">
+    <div >
+      <img mat-card-image class="banner-image" src="https://www.sixt.com.tr/storage/cache/d785969f2eaa5d872929cab6ae72bf76a04a5c8b.webp">
+      <h1 style="margin-top:8px ;margin-left: 10px;"><a
+          href="https://www.sixt.com.tr/blog/arac-bakimi-ve-ipuclari/uzun-donem-arac-kiralama-ekonomik-ve-pratik-cozum">
+          Uzun Dönem Araç Kiralama: Ekonomik ve Pratik Çözüm</a></h1>
+    </div>
+  </div>
+</div>
+
+<div>
+  <mat-card class="comment-footer">
+    <h1 style="margin-top: 15px; margin-left: 10px;">İletişim Bilgisi : +90 (533)327-42-32 </h1>
+    <h1 style="margin-top: 15px;">Mail : 20211132036@ogr.akdeniz.edu.tr</h1>
+    <h1 style="margin-top: 15px;" *ngIf="apiServis.oturumKontrol()"> Aktif Kullanıcı : {{uAdi}}</h1> 
+    <h1 style="margin-top: 15px;"><a href="" style="color: aliceblue;">Üye Sayfasına Git  </a></h1>
+
+  </mat-card>
+</div>

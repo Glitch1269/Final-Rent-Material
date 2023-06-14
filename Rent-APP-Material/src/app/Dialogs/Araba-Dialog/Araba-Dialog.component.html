@@ -1,0 +1,76 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>{{dialogBaslik}}</span>
+</mat-toolbar>
+<div >
+  <form [formGroup]="frm"  >
+    <mat-form-field appearance="outline" style="margin-top: 20px; margin-left: 20px;">
+      <mat-label >Araba Markası</mat-label>
+      <input matInput placeholder="Araba Markası Giriniz . . ." formControlName="carMarka" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Model</mat-label>
+      <input matInput placeholder="Araba Model Giriniz . . ." formControlName="carModel"  type="text" required>
+    </mat-form-field>
+
+<mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Yolcu</mat-label>
+      <input matInput placeholder="Araba Yolcu Sayısı Giriniz . . ." formControlName="carYolcu" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Yakıtlar :</mat-label>
+      <mat-select formControlName="carYakit" required>
+        <mat-option *ngFor="let yakit of yakitlar" [value]="yakit.yakitAdi"> {{yakit.yakitAdi}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Kategori</mat-label>
+      <mat-select formControlName="carKatId" required>
+        <mat-option *ngFor="let kat of kategoriler" [value]="kat.katAdi"> {{kat.katAdi}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Fiyatı</mat-label>
+      <input matInput placeholder="Araba Fiyatı Giriniz . . ." formControlName="carFiyat"  type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Ulaşım bilgisi</mat-label>
+      <input matInput placeholder="Araba Numarası Giriniz . . ." formControlName="carTelNo"  type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Resmi</mat-label>
+      <input matInput placeholder="Araba Resmi Giriniz . . ." formControlName="carResim"  type="text" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;">
+      <mat-label>Araba Popülerliği</mat-label>
+      <input matInput placeholder="0 - 100 Arası Bir Değer Giriniz" formControlName="carRate" type="number"  required>
+    </mat-form-field>
+
+
+   
+    
+    <mat-form-field appearance="outline"  style=" margin-left: 20px; width: 212px;">
+      <mat-label>Kayıt Tarihi</mat-label>
+      <input matInput [matDatepicker]="picker2"  formControlName="carKayit" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"  style=" margin-left: 20px; width: 212px;">
+      <mat-label>Düzenlenme Tarihi</mat-label>
+      <input matInput [matDatepicker]="picker"  formControlName="carDuzen" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+  </form>
+</div>
+<button mat-raised-button color="primary" (click)="dialogRef.close(frm.value)" style="margin-left: 265px;" >Oluştur</button>
+<button mat-raised-button color="warn" (click)="dialogRef.close()"style="margin-left: 25px;">Vazgeç</button>

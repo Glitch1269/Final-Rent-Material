@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>{{dialogBaslik}}</span>
+</mat-toolbar>
+
+<div >
+  <form [formGroup]="frm"  >
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;margin-top: 20px;">
+      <mat-label>Yakıt Adı</mat-label>
+      <input matInput placeholder="Yakıt Türü Giriniz . . ." formControlName="yakitAdi" required>
+    </mat-form-field>
+
+    
+
+  </form>
+</div>
+<button mat-raised-button color="primary" (click)="dialogRef.close(frm.value)" style="margin-left: 30px;">Oluştur</button>
+<button mat-raised-button color="warn" (click)="dialogRef.close()" style="margin-left: 10px;">Vazgeç</button>

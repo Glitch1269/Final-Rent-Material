@@ -1,0 +1,85 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.banner {
+  width: 1010px;
+  height: 219px;
+  margin-top: 45px;
+  margin-left: 470px;
+  background-color: bisque;
+  border: solid black 6px;
+  border-radius: 27px;
+}
+
+
+.styleV2-body{
+  width: 560px;
+  height: 481px;
+  margin-left: 45px;
+  margin-top: 45px;
+  border: solid black 4px;
+  border-radius: 25px;
+  background-color: rgb(212, 225, 237);
+}
+
+.styleV2-image-body{
+width: 494px;
+height: 320px;
+margin-left: 30px;
+margin-top: 30px;
+border: solid black 2px;
+border-radius: 30px;
+}
+
+.styleV2-image{
+  width: 490px;
+  height: 310px;
+}
+
+.styleV2-content{
+  margin-top: 40px;
+  background-color: rgb(32, 45, 65);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 25px;
+}
+
+
+.trio-banner {
+  width: 610px;
+  height: 290px;
+  margin-left: 205px;
+  margin-top: 40px;
+  border: solid black 3px;
+  border-radius: 20px;
+  background-color: rgb(183, 192, 200);
+}
+.banner-image{
+  width: 580px;
+  height: 191px;
+  margin-left: 11px;
+  margin-top: 12px;
+ border-radius: 20px;
+  border: solid rgb(172, 172, 172) 3px ;
+}
+
+
+.comment-footer {
+  background-color: rgb(72, 72, 219);
+  top:90px;
+  height: 65px;
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  color: aliceblue;
+  
+}
+
+
+.YaziLarge {
+  font-size: large;
+}
+

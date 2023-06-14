@@ -1,0 +1,41 @@
+
+
+<div style="width: 800px;margin-left: 500px;margin-top: 120px;background-color: rgb(225, 232, 232); border: solid black 4px; border-radius: 30px;">
+
+
+<div >
+
+  <mat-toolbar color="primary" style="border-radius: 24px;">
+    <div>
+      <h2 style="margin-left: 200px;margin-top: 15px;">Yetkisiz Giriş Lütfen  Admin Girişi  Yapınız !</h2>
+    </div>
+  
+  </mat-toolbar>
+  <div>
+ <mat-form-field appearance="outline" style="width: 45%;margin-left: 220px;margin-top: 80px;">
+    <mat-label>Kullanıcı Adı</mat-label>
+    <input matInput placeholder="Kullanıcı Adı" type="text" #kadi>
+  </mat-form-field>
+  </div>
+
+  <div>
+<mat-form-field appearance="outline" style="width: 45%;margin-left: 220px;margin-top: 30px;">
+    <mat-label>Parola</mat-label>
+    <input matInput placeholder="Parola" [type]="hide ? 'password' : 'text'" #parola>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  </div>
+
+ <div>
+  <button mat-raised-button color="primary"  style="width: 20%;height: 50px; margin-left: 180px;margin-top: 40px;margin-bottom: 50px;" (click)="OturumAc(kadi.value,parola.value)">Oturum Aç</button>
+  <button mat-raised-button color="warn"  style="width: 20%;height: 50px;margin-left: 120px;margin-top: 40px;margin-bottom: 50px;"   (click)="KullaniciEkle()">Kaydol</button>
+ </div>
+
+  
+
+  
+</div>
+</div>

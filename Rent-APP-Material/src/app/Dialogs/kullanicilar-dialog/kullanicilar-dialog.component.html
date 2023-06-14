@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>{{dialogBaslik}}</span>
+</mat-toolbar>
+<div>
+  <form [formGroup]="frm">
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;margin-top: 20px;">
+      <mat-label>Kullanıcı Adı</mat-label>
+      <input matInput placeholder="Adınızı Giriniz . . ." formControlName="userAdi" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;margin-top: 20px;">
+      <mat-label>Kullanıcı Mail</mat-label>
+      <input matInput placeholder="E-Mailinizi Giriniz . . ." formControlName="userMail" required>
+    </mat-form-field>
+
+    
+
+    <mat-form-field appearance="outline" style=" margin-left: 20px;margin-top: 20px;">
+      <mat-label>yetki</mat-label>
+      <mat-select formControlName="userIsAdmin" required>
+        <mat-option value="1">Admin</mat-option>
+        <mat-option value="0">Üye</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+<mat-form-field appearance="outline" style=" margin-left: 20px;margin-top: 20px;">
+      <mat-label>Parola</mat-label>
+      <input matInput placeholder="Parolanızı Giriniz . . ." formControlName="userPassword" required>
+    </mat-form-field>
+
+  </form>
+</div>
+<button mat-raised-button color="primary" (click)="dialogRef.close(frm.value)"
+  style="margin-left: 250px;">Oluştur</button>
+<button mat-raised-button color="warn" (click)="dialogRef.close()" style="margin-left: 30px;">Vazgeç</button>

@@ -1,0 +1,47 @@
+.example-sidenav-content {
+
+    height: 1920px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidenav-menu{
+    width: 190px;
+  }
+  
+  .side-yazi {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .YaziLarge{
+    font-size: large;
+  }
+  .YaziMedium{
+    font-size: medium;
+  }
+  .button-extended {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 140px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+   
+  }
+  .container{
+    width: 1400px;
+    margin-top: 50px;
+    margin-left: 240px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    border: solid rgb(175, 173, 172) 2px ;
+  }

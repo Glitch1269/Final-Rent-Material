@@ -1,0 +1,112 @@
+
+
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+                 <div><h1>Diğer Araçlarımız </h1></div>
+                 <div class="slide-body-buttons" *ngFor="let car of arabalar">
+                  <div>
+                    <button mat-raised-button color="primary" class="footer-comment-button"
+                      [routerLink]="['/uyeArabaPage', car.carId]"><div class="flex-container2">{{car.carMarka}}</div></button>
+                  </div>
+                </div>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <p><mat-checkbox [(ngModel)]="opened">
+
+
+
+        <mat-toolbar color="primary" class="mat-elevation-z6">
+            
+            <button class="YaziLarge" mat-button  style="margin-left:15px;color: rgb(0, 0, 0);">Sadece Admin :</button><p>
+
+                <button mat-icon-button (click)="sidenav.toggle()"  style="margin-left:15px;margin-top: 10px;" >
+                  <mat-icon aria-label="label">menu</mat-icon>
+                </button>
+               </p>
+            
+            <button class="YaziLarge" mat-button [routerLink]="['/kategori']" style="margin-left: 55px;">Kategoriler</button>
+          
+          <button class="YaziLarge" mat-button [routerLink]="['/kullanicilar']" style="margin-left: 115px;">Kullanıcılar</button>
+          
+          
+          <button class="YaziLarge" mat-button [routerLink]="['/yakitlar']" style="margin-left: 115px;">Yakıtlar</button>
+          
+          
+          <button class="YaziLarge" mat-button [routerLink]="['/adminPage']" style="margin-left: 115px;">Admin Anasayfa</button>
+          
+          
+          
+          <button class="YaziLarge" mat-button style="margin-left: 425px;" *ngIf="apiServis.oturumKontrol()">{{uAdi}}</button>
+          
+          <button  class="YaziLarge" mat-button style="margin-left: 625px;" *ngIf="!apiServis.oturumKontrol()" (click)="OturumAcDialog()">Oturum Aç</button>
+          
+          
+          <button  class="YaziLarge" mat-button style="margin-left: 45px;" *ngIf="apiServis.oturumKontrol()" (click)="OturumKapat()">Oturumu Kapat</button>
+          
+          
+          </mat-toolbar></mat-checkbox></p>
+     
+      <div class="flex-container">
+    
+        <mat-card class="card-image-body">
+            <mat-card-content class="image-content" >
+                <img mat-card-image  class="card-image" style="border-radius: 30px;" src="{{araba?.carResim}}">
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="card-detail-body">
+            <mat-card-content class="card-detail" style="margin-top: 20px;">
+                <h2 style="margin-top: 6px; font-size: xx-large; ">Marka : {{araba?.carMarka}}</h2>
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+              <h2 style="margin-top: 6px;font-size: xx-large;" >  Model : {{araba?.carModel}}</h2>
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px;font-size: xx-large;" >  Kategori : {{araba?.carKatId}}</h2>
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px;font-size: xx-large;" >  Yakıt : {{araba?.carYakit}}</h2>
+    
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px;font-size: xx-large;" >  Telefon : {{araba?.carTelNo}}</h2>
+    
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px;font-size: xx-large;" >  Fiyat : {{araba?.carFiyat}}.00 TL</h2>
+    
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px;font-size: xx-large;" >  Kayıt Tarihi : {{araba?.carKayit | date : "dd.MM.yy"}}</h2>
+    
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px;font-size: xx-large;" >  Düzenlenme Tarihi : {{araba?.carDuzen |  date : "dd.MM.yy" }}</h2>
+                
+            </mat-card-content>
+            <mat-card-content class="card-detail">
+                <h2 style="margin-top: 6px; font-size: xx-large; " >  Değerlendirme : ({{araba?.carRate}}) </h2>
+                <mat-progress-bar mode="determinate" value="{{araba?.carRate}}" style="margin-bottom: 20px;"> </mat-progress-bar>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button style="width: 150px;height: 50px; margin-left: 80px; margin-bottom: 15px;" 
+                color="accent" (click)="ArabaDuzenle(araba)">Düzenle</button>
+                <button mat-raised-button style="width: 150px;height: 50px; margin-left: 80px; margin-bottom: 15px;"
+                 color="warn"  (click)="ArabaSil(araba)">Sil</button>
+            </mat-card-actions>
+           
+        </mat-card>
+    </div>
+  
+  
+     
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  
+  
+  
+
+

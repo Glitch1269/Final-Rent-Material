@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <span>İşlem Onayı</span>
+</mat-toolbar>
+<div class="container">
+  {{dialogMesaj}}
+</div>
+<button mat-raised-button color="primary"  (click)="dialogRef.close(true)" style="margin-left: 140px; margin-top: 10px;">Onayla</button>
+<button mat-raised-button color="warn" (click)="dialogRef.close(false)"style="margin-left: 25px; margin-top: 10px;">Kapat</button>

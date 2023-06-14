@@ -1,0 +1,11 @@
+
+  <mat-toolbar [color]="dialogIslem ? 'warn':'primary'" style="width: 300px;">
+    <span>{{dialogBaslik}}</span>
+    <button mat-icon-button (click)="dialogRef.close()" style="margin-left: 110px;">
+      <mat-icon aria-label="label" color="ascent">highlight_off</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div style="width: 260px;margin-top: 20px;margin-left: 40px;">
+    <b>{{dialogMesaj}}</b>
+  </div>
+
